@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Accordion/Accordion/Accordion.Android/bin/Debug
+/Accordion/Accordion/Accordion.Android/obj/Debug/android/bin
+/Accordion/Accordion/Accordion.Android/obj/Debug/android/bin
+/Accordion/Accordion/Accordion.Android/obj/Debug/android/bin/classes
+/Accordion/Accordion/Accordion.Android/obj/Debug/android/bin/classes/accordion/android
+/Accordion/Accordion/Accordion.Android/obj/Debug
+/Accordion/packages

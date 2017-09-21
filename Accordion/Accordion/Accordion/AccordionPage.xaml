@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Accordion.Control"
+             x:Class="Accordion.AccordionPage">
+    <StackLayout>
+        <control:AccordionScrollView ItemsSource="{Binding Items,Mode=TwoWay,UpdateSourceEventName=OnPropertyChanged}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <control:AccordionScrollView.HeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                        <Label Text="{Binding Header}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Red"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </control:AccordionScrollView.HeaderTemplate>
+            <control:AccordionScrollView.ItemTemplate>
+                <DataTemplate>
+                    <control:Accordion  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <control:Accordion.HeaderTemplate>
+                            <DataTemplate>
+                                <control:HeaderViewCell>
+                                    <Label Text="{Binding Title}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
+                                        <!--<Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                           Command="{Binding ExpandCommand}" />
+                                        </Label.GestureRecognizers>-->
+                                    </Label>
+                                </control:HeaderViewCell>
+                            </DataTemplate>
+                        </control:Accordion.HeaderTemplate>
+                        <control:Accordion.ItemTemplate>
+                            <DataTemplate>
+                                <control:AccordionSection HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Label Text="{Binding Date}"></Label>
+                                    <Label Text="{Binding Time}"></Label>
+                                    <Label Text="{Binding Place}"></Label>
+                                </control:AccordionSection>
+                            </DataTemplate>
+                        </control:Accordion.ItemTemplate>
+                    </control:Accordion>
+                </DataTemplate>
+            </control:AccordionScrollView.ItemTemplate>
+        </control:AccordionScrollView>
+    </StackLayout>
+</ContentPage>
