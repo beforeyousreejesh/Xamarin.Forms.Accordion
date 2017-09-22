@@ -56,6 +56,10 @@ namespace Accordion.Control
             get { return (double)GetValue(ItemSpacingProperty); }
             set { SetValue(ItemSpacingProperty, value); }
         }
+
+
+        public event EventHandler DoneLoading;
+
         public void Render()
         {
             if (this.ItemTemplate == null || this.ItemsSource == null || HeaderTemplate == null)
@@ -123,6 +127,8 @@ namespace Accordion.Control
             }
 
             Content = mainLayout;
+
+            DoneLoading?.Invoke(this, new EventArgs());
         }
 
         private void ExpandCallBack()
